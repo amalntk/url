@@ -1,0 +1,97 @@
+
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cryptography</title>
+    <style>
+        .crypto{
+            align-items: center;
+            /* margin-left: 400px; */
+            margin-top: 80px;
+            border-radius: 10px;
+            /* border-style:double; */
+            border-width: 10px;
+            border-style: solid;
+            margin-right: 300px;
+            margin-left: 400px;
+            padding-left: 100px;
+            padding-top: 50px;
+            background-color: aliceblue;
+            /* position: absolute; */
+
+
+        }
+        .cipher_btn{
+            /* color: aqua; */
+            /* background-color: blue; */
+            font-size: large;
+            width: 100px;
+
+        }
+        .cb{
+            background-image: url(../static/img/encry2.webp);
+            /* background-color: antiquewhite; */
+            background-color:beige;
+            image-rendering: auto;
+
+
+        }
+        .txt{
+            font-size:larger;
+        }
+        .decrypt_btn{
+            background-color: rgb(107, 119, 119);
+            width: 90px;
+            height: 30px;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+        .send{
+            margin-top: 0px;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body class="cb">
+    <div class="crypto">
+
+        <form method="POST">
+            {% csrf_token %} 
+            <label class="txt" for="text">
+                Decrypted msg
+            </label><br>
+            {{fm}}
+            <!-- <textarea id="plain" rows="10" cols="50" placeholder="enter the cipher text"></textarea><br><br> -->
+            <!-- <input type="button" id="cipher_btn" value="Encrypt"> -->
+            <!-- <label> Generate Key</label> -->
+            <!-- <input type="text" placeholder="enter key"> -->
+            <!-- <select  class="cipher_btn">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+
+            </select><br><br> -->
+            <div>
+                <h3>OR</h3>
+                <input type="file">
+            </div>
+            <div>
+            
+                <input type="button" value="GO"class="decrypt_btn"> <br>
+                
+            </div>
+            
+            <label class="txt" for="en_text">
+            Plain Text
+            </label><br>
+            <textarea id="cipher" rows="10" cols="50" placeholder="Decrypted text ">{{text}}</textarea><br><br>
+            <div class="send">
+                <input type="button" value="Send" style="background-color: blue; color: black; font-size: larger;">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
