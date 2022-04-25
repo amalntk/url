@@ -56,42 +56,76 @@
         }
     </style>
 </head>
-<body class="cb">
+<!-- <body class="cb">
     <div class="crypto">
 
-        <form method="POST">
-            {% csrf_token %} 
+        <form method="POST">{% csrf_token %} 
             <label class="txt" for="text">
                 Decrypted msg
             </label><br>
             {{fm}}
-            <!-- <textarea id="plain" rows="10" cols="50" placeholder="enter the cipher text"></textarea><br><br> -->
-            <!-- <input type="button" id="cipher_btn" value="Encrypt"> -->
-            <!-- <label> Generate Key</label> -->
-            <!-- <input type="text" placeholder="enter key"> -->
-            <!-- <select  class="cipher_btn">
-                <option value="encrypt">Encrypt</option>
-                <option value="decrypt">Decrypt</option>
-
-            </select><br><br> -->
+            
             <div>
                 <h3>OR</h3>
                 <input type="file">
             </div>
             <div>
             
-                <input type="button" value="GO"class="decrypt_btn"> <br>
+                <input type="button" value="GO"class="decrypt_btn" size="1"> <br>
                 
             </div>
             
-            <label class="txt" for="en_text">
+            <label class="text" for="enText">
             Plain Text
             </label><br>
-            <textarea id="cipher" rows="10" cols="50" placeholder="Decrypted text ">{{text}}</textarea><br><br>
+            <textarea name="" id="enText" rows="10" cols="50" >{{text}}</textarea><br><br>
             <div class="send">
                 <input type="button" value="Send" style="background-color: blue; color: black; font-size: larger;">
             </div>
         </form>
+    </div>
+</body> -->
+<body class="cb">
+    <div class="crypto">
+        <div class="text1">
+        <form method="POST">{% csrf_token %}
+            <label for="text" class="form-label">Cipher text
+            
+            </label><br>
+            {{fm}}
+            <br><br>
+            
+        </div>
+        <!-- <div>
+            <h3>OR</h3>
+            <input type="file">
+        </div> -->
+        <div >
+            <input type="submit" value="GO" size="1"class="decrypt_btn"> 
+            </div><br><br>
+            <label for="enText" class="form-label">decrypted message</label>
+            <br>
+            <textarea name="" id="enText" rows="5" cols="40">{{text}}</textarea>
+            <!-- <textarea id="plain" rows="10" cols="50" placeholder="enter the text "></textarea><br><br> -->
+            <!-- <input type="button" id="cipher_btn" value="Encrypt"> -->
+            <!-- <label> Generate Key</label> -->
+            <!-- <input type="text" placeholder="enter key"> -->
+            <!-- <select  class="cipher_btn">
+                <option value="encrypt">Encrypt</option>
+               <option value="decrypt">Decrypt</option>
+
+            </select><br><br> -->
+            <!-- <input type="submit"> -->
+            <!-- <label class="txt" for="entext"> -->
+            <!-- Cipher Text -->
+            <!-- </label><br> -->
+            <!-- <textarea id="cipher" rows="10" cols="50" placeholder="encrypted text">{{text}}</textarea><br><br> -->
+            <!-- <div class="send">
+                <input type="button" value="Send" style="background-color: blue; color: black; font-size: larger;">
+            </div> -->
+        </form>
+        <br><br>
+        
     </div>
 </body>
 </html>
